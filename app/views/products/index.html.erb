@@ -13,7 +13,7 @@
        </div>
        <%= form_for @order_item, remote: true do |f| %>
           <%= f.hidden_field :product_id, value: product.id %>
-          <%= f.number_field :quantity, placeholder: "Needs input!" %>
+          <%= f.number_field :quantity, placeholder: "Oops, this breaks if you don't add an input!", min: 0, max: 5000 %>
           <span class="waves-effect waves-light btn"><%= f.submit "Add to cart", remote: true, id: "add-to-cart-#{product.id}" %></span>
        <% end %>
      </div>

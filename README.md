@@ -39,11 +39,13 @@ Add integration testing for AJAX functionality.
 Add further AJAX functionality where it might be useful.
 #The following changes were made:
 
-* If a product is added to the cart on the home page, an AJAX request is sent to update the # of items in the cart without reloading the page for a better user experience overall.
+* AJAX: If a product is added to the cart on the home page, an AJAX request is sent to update the # of items in the cart without reloading the page for a better user experience overall.
 
-* On the Homepage, users may click on a product to show or hide its details.
+* AJAX: On the Homepage, users may click on a product to show or hide its details.
 
-* On shopping cart screen, delete items without reloading the page when an item is removed.
+* AJAX: On shopping cart screen, delete items without reloading the page when an item is removed.
+
+* Allow only positive integers in the add cart form and up to a max of 5000 items. 
 
 
 
