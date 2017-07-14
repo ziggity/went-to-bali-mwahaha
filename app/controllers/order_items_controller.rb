@@ -5,7 +5,11 @@ class OrderItemsController < ApplicationController
     @item = @order.order_items.new(item_params)
     @order.save
     session[:order_id] = @order.id
-    redirect_to products_path
+    @product_id = item_params[:product_id]
+     respond_to do |f|
+       f.html { redirect_to products_path }
+       f.js
+     end
   end
 
   def update
