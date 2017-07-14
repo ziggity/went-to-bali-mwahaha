@@ -19,6 +19,20 @@ class ProductsController < ApplicationController
     end
   end
 
+  def update
+        @product = Product.find(params[:id])
+        if @product.update(product_params)
+         redirect_to '/', notice: 'Wahoo! Product successfully updated'
+        else
+          render :edit
+        end
+
+  def destroy
+        @product = Product.find(params[:id])
+        @product.destroy
+      redirect_to '/', notice: 'Wahoo! Product successfully deleted'
+      end
+
   def show
       @product = Product.find(params[:id])
        respond_to do |format|
@@ -39,6 +53,8 @@ class ProductsController < ApplicationController
        render :edit
      end
    end
+ end
+
   private
   def product_params
     params.require(:product).permit(:name, :description, :price)

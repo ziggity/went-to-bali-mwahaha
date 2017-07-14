@@ -46,7 +46,12 @@ Add further AJAX functionality where it might be useful.
 * AJAX: On shopping cart screen, delete items without reloading the page when an item is removed.
 
 * Allow only positive integers in the add cart form and up to a max of 5000 items.
+
 * Add flash messages for user when they sign up, sign out, and sign in.
+
+* Add admin support to add new products.
+
+* Add admin flash messages for adding new product, updating, and edit and add CRUD functionality core. 
 
 
 
