@@ -1,5 +1,9 @@
 <h3>Products</h3>
-
+<p>
+   <% if admin %>
+     <%= link_to 'Add a Product', new_product_path %>
+   <% end %>
+ </p>
  <div class="row">
    <div class="section">
     <% @products.each do |product| %>
@@ -8,12 +12,20 @@
         <p><%= number_to_currency product.price %></p>
        <button class="show-details">View Details</button>
        <div class="product-details">
+         <p>
+               <% if admin %>
+                 <span id="edit-product-info">
+                   <%= link_to 'Edit', edit_product_path(product), class: 'edit-product-btn' %>
+                   <%= link_to 'Delete', product_path(product), method: 'delete', :data => {:confirm => "You sure?"}, class: 'delete-product-btn'%>
+                 </span>
+               <% end %>
+             </p>
          <p><%= product.description %></p>
          <%= image_tag "/assets/product.jpg", style: "width:200px;height:200px;" %>
        </div>
        <%= form_for @order_item, remote: true do |f| %>
           <%= f.hidden_field :product_id, value: product.id %>
-          <%= f.number_field :quantity, placeholder: "Oops, this breaks if you don't add an input!", min: 0, max: 5000 %>
+          <%= f.number_field :quantity, placeholder: "Please enter quantity", min: 0, max: 5000 %>
           <span class="waves-effect waves-light btn"><%= f.submit "Add to cart", remote: true, id: "add-to-cart-#{product.id}" %></span>
        <% end %>
      </div>

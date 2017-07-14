@@ -1,3 +1,11 @@
+admin_user = User.new
+admin_user.name = "admin"
+admin_user.email = "admin@gmail.com"
+admin_user.password = "111111"
+admin_user.password_confirmation = "111111"
+admin_user.admin = true
+admin_user.save
+
 class Seed
 
   def self.begin

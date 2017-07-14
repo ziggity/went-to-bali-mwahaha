@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to '/'
+       redirect_to '/', notice: 'Wahoo! Product successfully added'
     else
       render :new
     end
@@ -26,6 +26,19 @@ class ProductsController < ApplicationController
          format.js
        end
      end
+
+     def edit
+     @product = Product.find(params[:id])
+   end
+
+   def update
+     @product = Product.find(params[:id])
+     if @product.update(product_params)
+       redirect_to '/'
+     else
+       render :edit
+     end
+   end
   private
   def product_params
     params.require(:product).permit(:name, :description, :price)
