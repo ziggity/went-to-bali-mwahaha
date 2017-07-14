@@ -1,18 +1,22 @@
 <h3>Products</h3>
 
-<div class="row">
-  <div class="section">
-  <% @products.each do |product| %>
-    <div class="col s4">
-      <h4><%= product.name %></h4>
-      <p><%= product.description %></p>
-      <p><%= number_to_currency product.price %></p>
-      <%= form_for @order_item, remote: true do |f| %>
-        <%= f.hidden_field :product_id, value: product.id %>
-        <%= f.number_field :quantity, placeholder: "Oops, breaks if you don't add input!" %>
-        <span class="waves-effect waves-light btn"><%= f.submit "Add to cart", remote: true, id: "add-to-cart-#{product.id}" %></span>
-      <% end %>
-    </div>
-  <% end %>
-</div>
-</div>
+ <div class="row">
+   <div class="section">
+    <% @products.each do |product| %>
+      <div class="col s4">
+        <h4><%= product.name %></h4>
+        <p><%= number_to_currency product.price %></p>
+       <button id="show-details">View Details</button>
+       <div class="product-details">
+         <p><%= product.description %></p>
+         <%= image_tag "/assets/product.jpg", style: "width:200px;height:200px;" %>
+       </div>
+       <%= form_for @order_item, remote: true do |f| %>
+          <%= f.hidden_field :product_id, value: product.id %>
+          <%= f.number_field :quantity, placeholder: "Needs input!" %>
+          <span class="waves-effect waves-light btn"><%= f.submit "Add to cart", remote: true, id: "add-to-cart-#{product.id}" %></span>
+       <% end %>
+     </div>
+   <% end %>
+ </div>
+ </div>

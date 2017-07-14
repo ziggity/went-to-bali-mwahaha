@@ -41,6 +41,8 @@ Add further AJAX functionality where it might be useful.
 
  * If a product is added to the cart on the home page, an AJAX request is sent to update the # of items in the cart without reloading the page for a better user experience overall.
 
+ * On the Homepage, users may click on a product to show or hide its details.
+
 E-commerce site. Uses `bcrypt` and `materialize`. There's a seed file. Set up your own admin. If you have questions, I'll be in Bali with no email. Ask someone else.
 
 #To set up:
