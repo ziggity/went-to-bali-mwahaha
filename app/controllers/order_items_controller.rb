@@ -24,7 +24,10 @@ class OrderItemsController < ApplicationController
     @item = @order.order_items.find(params[:id])
     @item.destroy
     @order.save
-    redirect_to cart_path
+    respond_to do |f|
+      f.html { redirect_to cart_path }
+      f.js
+    end
   end
 
   private

@@ -1,0 +1,3 @@
+$("#cart-item-<%= @item.id %>").remove();
+ $(".current-cart").html(<%= @order.order_items.count %>);
+ $(".cart-total").html("$"+<%= @order.total_price %>+".00");
