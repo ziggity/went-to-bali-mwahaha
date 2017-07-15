@@ -24,6 +24,8 @@ class ProductsController < ApplicationController
         if @product.update(product_params)
          redirect_to '/', notice: 'Wahoo! Product successfully updated'
         else
+          flash[:alert] = "Oh snap! There was an error. Please try again."
+        @products = Product.order()
           render :edit
         end
 
@@ -50,6 +52,7 @@ class ProductsController < ApplicationController
      if @product.update(product_params)
        redirect_to '/'
      else
+       flash[:alert] = "There was an error. Please try again."
        render :edit
      end
    end

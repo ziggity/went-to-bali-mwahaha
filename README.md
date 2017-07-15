@@ -51,7 +51,9 @@ Add further AJAX functionality where it might be useful.
 
 * Add admin support to add new products.
 
-* Add admin flash messages for adding new product, updating, and edit and add CRUD functionality core. 
+* Add admin flash messages for adding new product, updating, and edit and add CRUD functionality core.
+
+* Add validation for products. 
 
 
 
