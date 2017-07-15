@@ -57,6 +57,7 @@ Add further AJAX functionality where it might be useful.
 
 * Add validation to user model, password must contain at least one A-Z letter and one #.
 
+* If the current user is an admin, they would see a link to the admin link in the navbar.
 
 
 E-commerce site. Uses `bcrypt` and `materialize`. There's a seed file. Set up your own admin. If you have questions, I'll be in Bali with no email. Ask someone else.
