@@ -53,7 +53,9 @@ Add further AJAX functionality where it might be useful.
 
 * Add admin flash messages for adding new product, updating, and edit and add CRUD functionality core.
 
-* Add validation for products. 
+* Add validation for products.
+
+* Add validation to user model, password must contain at least one A-Z letter and one #.
 
 
 
